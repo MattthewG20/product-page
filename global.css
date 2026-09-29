@@ -4,11 +4,42 @@
     grid-template-areas: 
         "header"
         "main"
-        "aside"
+        "aside-left"
+        "aside-right"
         "footer";
 }
 
-.site-header { grid-area: header; }
-.site-main { grid-area: main; }
-.site-aside { grid-area: aside; }
-.site-footer { grid-area: footer; }
+.site-header {
+    grid-area: header;
+    background-color: lightskyblue;
+}
+
+.site-main {
+    grid-area: main; 
+    background-color: lightblue;
+}
+
+.site-aside-left { 
+    grid-area: aside-left;
+    background-color: lightseagreen;
+}
+
+.site-aside-right {
+    grid-area: aside-right;
+    background-color: lightseagreen;
+}
+
+.site-footer { 
+    grid-area: footer;
+    background-color: lightsteelblue;
+}
+
+@media (min-width: 600px) {
+    .page {
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-areas: 
+            "header header header header"
+            "aside-left main main aside-right"
+            "footer footer footer footer";
+    }
+}
