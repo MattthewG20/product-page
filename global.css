@@ -1,3 +1,8 @@
+:root {
+    --overlay-color: rgba(0, 0, 0, 0.4)
+}
+
+
 .page {
     display: grid;
     gap: 1rem;
@@ -34,6 +39,41 @@
     background-color: lightsteelblue;
 }
 
+.product-card {
+    width: 500px;
+    height: 500px;
+}
+
+.product-photo {
+    position: relative;
+}
+
+.product-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: var(--overlay-color);
+    opacity: 0;
+    color: white;
+    text-align: center;
+    align-content: center;
+    font-size: 30px;
+
+    width: 500px;
+    height: 300px;
+
+    transition: opacity 0.8s ease;
+}
+
+.product-card:hover .product-overlay,
+.product-card:focus-within .product-overlay {
+    opacity: 1;
+}
+
+.product-image {
+    width: 500px;
+    height: 300px;
+}
+
 @media (min-width: 600px) {
     .page {
         grid-template-columns: 1fr 2fr 1fr;
@@ -42,4 +82,11 @@
             "aside-left main main aside-right"
             "footer footer footer footer";
     }
+
+    .products {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: space-around;
+    }
+
 }
